@@ -11,6 +11,16 @@ Install Kubernetes Gateway API:
 kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml
 ```
 
+Install MetalLB:
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
+kubectl wait -n metallb-system deployment/controller --for=condition=Available --timeout=300s
+kubectl wait -n metallb-system pod --selector=app=metallb --for=condition=ready --timeout=60s
+curl -s https://raw.githubusercontent.com/Kuadrant/kuadrant-operator/refs/tags/v0.10.0/utils/docker-network-ipaddresspool.sh | bash -s -- kind yq 1 | kubectl apply -n metallb-system -f -
+```
+
+
 Install the Istio Gateway Controller:
 
 ```sh
@@ -37,14 +47,6 @@ spec:
 EOF
 ```
 
-Install MetalLB:
-
-```sh
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
-kubectl wait -n metallb-system deployment/controller --for=condition=Available --timeout=300s
-kubectl wait -n metallb-system pod --selector=app=metallb --for=condition=ready --timeout=60s
-curl -s https://raw.githubusercontent.com/Kuadrant/kuadrant-operator/refs/tags/v0.10.0/utils/docker-network-ipaddresspool.sh | bash -s -- kind yq 1 | kubectl apply -n metallb-system -f -
-```
 
 Deploy an ingress gateway:
 
@@ -107,7 +109,6 @@ curl --resolve api.news.io:80:$INGRESS_IP http://api.news.io/sports
 #### ❸ [Enable security capabilities for the gateways](3-kuadrant.md)
 #### ❹ [Add authentication and authorization to the application](4-auth.md)
 #### ❺ [Add rate limiting to the application](5-rate-limit.md)
-#### ❻ [Deploy the consumer app](6-consumer.md)
 
 <br/>
 

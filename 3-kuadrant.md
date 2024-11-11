@@ -22,7 +22,11 @@ Install Kuadrant:
 
 ```sh
 helm repo add kuadrant https://kuadrant.io/helm-charts/ --force-update
-helm install kuadrant-operator kuadrant/kuadrant-operator --devel
+helm install \
+ kuadrant-operator kuadrant/kuadrant-operator \
+ --create-namespace \
+ --namespace kuadrant-system \
+ --devel
 ```
 
 ```sh
@@ -67,7 +71,7 @@ metadata:
 spec:
   selfSigned: {}
 ---
-apiVersion: kuadrant.io/v1alpha1
+apiVersion: kuadrant.io/v1
 kind: TLSPolicy
 metadata:
   name: ingress-gateway-tls
@@ -103,7 +107,6 @@ curl --resolve api.news.io:443:$INGRESS_IP https://api.news.io/sports --insecure
 
 #### ❹ [Add authentication and authorization to the application](4-auth.md)
 #### ❺ [Add rate limiting to the application](5-rate-limit.md)
-#### ❻ [Deploy the consumer app](6-consumer.md)
 
 <br/>
 

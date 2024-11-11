@@ -12,7 +12,7 @@ Create a RateLimitPolicy:
 
 ```sh
 kubectl apply -f - <<EOF
-apiVersion: kuadrant.io/v1beta2
+apiVersion: kuadrant.io/v1
 kind: RateLimitPolicy
 metadata:
   name: news-api-rate-limit
@@ -25,10 +25,9 @@ spec:
     global:
       rates:
       - limit: 2
-        duration: 10
-        unit: second
+        window: 10s
       counters:
-      - request.path
+      - expression: request.path
 EOF
 ```
 
@@ -42,7 +41,6 @@ for i in {1..10}; do curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authoriza
 for i in {1..10}; do curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubectl create token niko)" https://api.news.io/economy && sleep 1; done
 ```
 
-#### ❻ [Deploy the consumer app](6-consumer.md)
 
 <br/>
 

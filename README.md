@@ -36,7 +36,6 @@ Demo tutorial of protecting a service application with Kubernetes Auth and Rate 
 #### ❸ [Enable security capabilities for the gateways](3-kuadrant.md)
 #### ❹ [Add authentication and authorization to the application](4-auth.md)
 #### ❺ [Add rate limiting to the application](5-rate-limit.md)
-#### ❻ [Deploy the consumer app](6-consumer.md)
 
 <br/>
 

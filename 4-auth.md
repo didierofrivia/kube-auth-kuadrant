@@ -11,7 +11,7 @@ Create an AuthPolicy:
 
 ```sh
 kubectl apply -f -<<EOF
-apiVersion: kuadrant.io/v1beta2
+apiVersion: kuadrant.io/v1
 kind: AuthPolicy
 metadata:
   name: news-api-auth
@@ -185,7 +185,6 @@ curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubect
 ```
 
 #### ❺ [Add rate limiting to the application](5-rate-limit.md)
-#### ❻ [Deploy the consumer app](6-consumer.md)
 
 <br/>
 
