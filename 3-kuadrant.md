@@ -101,7 +101,7 @@ curl --resolve api.news.io:443:$INGRESS_IP https://api.news.io/sports
 ```
 
 ```sh
-curl --resolve api.news.io:443:$INGRESS_IP https://api.news.io/sports --insecure
+curl --resolve api.news.io:443:$INGRESS_IP https://api.news.io/sports -i --insecure
 # []
 ```
 
