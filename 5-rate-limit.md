@@ -41,6 +41,9 @@ for i in {1..10}; do curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authoriza
 for i in {1..10}; do curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubectl create token niko)" https://api.news.io/economy && sleep 1; done
 ```
 
+### Topology and request flow
+
+![Architecture](architecture-step-5.png)
 
 <br/>
 

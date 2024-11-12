@@ -106,6 +106,10 @@ curl --resolve api.news.io:80:$INGRESS_IP http://api.news.io/sports -i
 # []
 ```
 
+### Topology and request flow
+
+![Architecture](architecture-step-2.png)
+
 #### ❸ [Enable security capabilities for the gateways](3-kuadrant.md)
 #### ❹ [Add authentication and authorization to the application](4-auth.md)
 #### ❺ [Add rate limiting to the application](5-rate-limit.md)

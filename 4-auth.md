@@ -184,6 +184,10 @@ curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubect
 # []
 ```
 
+### Topology and request flow
+
+![Architecture](architecture-step-4.png)
+
 #### ❺ [Add rate limiting to the application](5-rate-limit.md)
 
 <br/>

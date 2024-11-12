@@ -70,6 +70,10 @@ curl http://localhost:3000/sports -i
 # []
 ```
 
+### Topology and request flow
+
+![Architecture](architecture-step-1.png)
+
 #### ❷ [Setup a gateway](2-gateway.md)
 #### ❸ [Enable security capabilities for the gateways](3-kuadrant.md)
 #### ❹ [Add authentication and authorization to the application](4-auth.md)
