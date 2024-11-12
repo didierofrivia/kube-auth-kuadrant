@@ -105,6 +105,10 @@ curl --resolve api.news.io:443:$INGRESS_IP https://api.news.io/sports -i --insec
 # []
 ```
 
+### Topology and request flow
+
+![Architecture](architecture-step-3.png)
+
 #### ❹ [Add authentication and authorization to the application](4-auth.md)
 #### ❺ [Add rate limiting to the application](5-rate-limit.md)
 

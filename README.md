@@ -17,7 +17,7 @@ Demo tutorial of protecting a service application with Kubernetes Auth and Rate 
 
 ### Topology and request flow
 
-![Architecture](architecture.png)
+![Architecture](architecture-step-5.png)
 
 ### Requirements
 
