@@ -66,7 +66,7 @@ kubectl port-forward service/news-api 3000:3000 2>&1 >/dev/null &
 ```
 
 ```sh
-curl http://localhost:3000/sports
+curl http://localhost:3000/sports -i
 # []
 ```
 

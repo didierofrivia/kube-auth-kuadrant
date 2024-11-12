@@ -129,7 +129,7 @@ EOF
 Consume the application again now with permissions:
 
 ```sh
-curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubectl create token alice)" https://api.news.io/sports
+curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubectl create token alice)" https://api.news.io/sports -i
 # []
 ```
 
@@ -175,12 +175,12 @@ curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubect
 Read news articles as Niko:
 
 ```sh
-curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubectl create token niko)" https://api.news.io/sports
+curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubectl create token niko)" https://api.news.io/sports -i
 # [{"id": …}]
 ```
 
 ```sh
-curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubectl create token niko)" https://api.news.io/economy
+curl -k --resolve api.news.io:443:$INGRESS_IP -H "Authorization: Bearer $(kubectl create token niko)" https://api.news.io/economy -i
 # []
 ```
 

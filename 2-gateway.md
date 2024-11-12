@@ -102,7 +102,7 @@ export INGRESS_IP=$(kubectl get gateway/ingress-gateway -n istio-system -o jsonp
 ```
 
 ```sh
-curl --resolve api.news.io:80:$INGRESS_IP http://api.news.io/sports
+curl --resolve api.news.io:80:$INGRESS_IP http://api.news.io/sports -i
 # []
 ```
 
